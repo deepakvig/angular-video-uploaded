@@ -1,0 +1,58 @@
+
+media-upload {
+  display: block;
+}
+
+.media-upload {
+  color: #333;
+  .media-drop {
+    margin: 20px 0;
+    border: 2px dashed #999999;
+    color: #999999;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #888888;
+      color: #888888;
+    }
+  }
+
+  .media-progress {
+    padding: 1px;
+    border: 1px solid #ccc;
+    background: white;
+    height: 30px;
+    width: 100%;
+    position: relative;
+  }
+
+  .media-preview {
+    height: 200px;
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #eeeeee;
+    border: 1px solid #dddddd;
+    border-radius: 0px;
+    padding: 4px;
+
+    .wistia_embed {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .media-error {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #f5c7c7;
+    color: #b04120;
+    border:1px solid #cc695a;
+  }
+}

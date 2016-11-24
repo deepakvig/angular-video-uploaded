@@ -1,0 +1,37 @@
+
+<div class="media-upload">
+  <form ng-if="$ctrl.state == $ctrl.STATES.IDLE">
+    <div class="media-drop"
+      ngf-select
+      ngf-drop
+      ng-model="$ctrl.file"
+      name="file"
+      ngf-accept="'video/*'"
+      ngf-max-size="20MB"
+    >
+      <span> Drag or click here to choose a video </span>
+    </div>
+
+    <div class="media-buttons" ng-if="$ctrl.file">
+      <button class="btn btn-primary"
+        type="submit"
+        ng-click="$ctrl.submit()"
+        ng-disabled="!$ctrl.file"
+        >
+          Upload the video
+      </button>
+    </div>
+  </form>
+
+  <div class="media-preview" ng-if="$ctrl.state == $ctrl.STATES.COMPLETED">
+    <wistia-player hashed-id={{$ctrl.videoId}} width=400 height=200> </wistia-player>
+  </div>
+
+  <div class="media-progress" ng-show="$ctrl.state == $ctrl.STATES.UPLOADING">
+    <div class="media-progress-bar"> {{$ctrl.progress}}</div>
+  </div>
+
+  <div class="media-error" ng-show="$ctrl.state == $ctrl.STATES.ERROR">
+    {{ $ctrl.error }}
+  </div>
+</div>
